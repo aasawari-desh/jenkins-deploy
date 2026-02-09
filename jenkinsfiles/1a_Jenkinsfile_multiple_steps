@@ -31,6 +31,7 @@ pipeline {
             steps {
                 echo 'This is Build Stage.'
                 echo 'This is step 1'
+                archiveArtifacts artifacts: '*.war', followSymlinks: false            // Archive .war files
                 echo 'This is Jenkins Job'
                 sh '''echo "this is shell script step"
                 cd ${WORKSPACE}'''
